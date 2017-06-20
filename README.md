@@ -10,8 +10,9 @@ Learn Docker and Devops from Udemy course
 ![alt text](https://github.com/smalltide/docker-devops/blob/master/screenshot.gif "docker-devops")
 
 1. docker
-2. virtualbox
-3. vagrant
+2. docker-machine
+3. virtualbox
+4. vagrant
 
 install ubuntu 14.04 and docker
 ```
@@ -27,4 +28,13 @@ install ubuntu 14.04 and docker
 install docker on macOS
 ```
   > install docker (https://store.docker.com/editions/community/docker-ce-desktop-mac)
+```
+using docker-machine on macOS
+```
+  > docker-machine ls
+  > docker-machine create demo
+  > docker-machine ssh demo
+  > docker-machine env demo
+  > docker-machine stop demo
+  > docker-machine rm demo
 ```
