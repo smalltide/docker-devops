@@ -45,3 +45,11 @@ using docker command pull and delete images
   > docker pull ubuntu:16.04
   > docker image rm ubuntu:16.04
 ```
+build docker image using Dockerfile and push to docker hub
+```
+  > cd flask-hello-world
+  > docker build -t smalltides/python-flask-demo:1.0 .
+  > docker login (when first push)
+  > docker push smalltides/python-flask-demo:1.0
+  > docker pull smalltides/python-flask-demo:1.0
+```
