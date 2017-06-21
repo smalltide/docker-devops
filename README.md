@@ -38,3 +38,10 @@ using docker-machine on macOS
   > docker-machine stop demo
   > docker-machine rm demo
 ```
+using docker command pull and delete images
+```
+  > docker pull ubuntu
+  > docker images
+  > docker pull ubuntu:16.04
+  > docker image rm ubuntu:16.04
+```
