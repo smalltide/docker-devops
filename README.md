@@ -74,3 +74,20 @@ using docker command to manage container
   > docker container create --name demo busybox sh -c "while true; do sleep 3600; done" (--name for named container)
   > docker container run -d --name demo busybox sh -c "while true; do sleep 3600; done" (-d for background running)
 ```
+add now user to docker group
+```
+  > sudo groupadd docker
+  > sudo gpasswd -a ${USER} docker
+  > sudo service docker restart
+  > exit
+  > vagrant ssh default
+```
+manage multi image and container command
+```
+  > docker container ls -a
+  > docker container ls -aq
+  > docker container ls -f status=exited | awk '{print$1}' | awk 'NR>1' | xargs docker container rm (filter status=exited)
+  > docker container start $(docker container ls -q -f status=created) (start all created status containers)
+  > docker image ls -q
+  > docker image rm $(docker image ls -q)
+```
