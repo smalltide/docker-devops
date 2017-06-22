@@ -53,3 +53,24 @@ build docker image using Dockerfile and push to docker hub
   > docker push smalltides/python-flask-demo:1.0
   > docker pull smalltides/python-flask-demo:1.0
 ```
+new version docker command style
+```
+  > docker image ls
+  > docker image pull
+  > docker image rm
+  > docker container ls
+```
+using docker command to manage container
+```
+  > docker image pull busybox
+  > docker container create busybox
+  > docker container ls (for running)
+  > docker container ls -a (for all)
+  > docker container start b7dc003fda3f (container id)
+  > docker container rm b7dc003fda3f (container id)
+  > docker container create busybox sh -c "while true; do sleep 3600; done"
+  > docker container start 5863d34351c4 (container id)
+  > docker container stop 5863d34351c4 (container id)
+  > docker container create --name demo busybox sh -c "while true; do sleep 3600; done" (--name for named container)
+  > docker container run -d --name demo busybox sh -c "while true; do sleep 3600; done" (-d for background running)
+```
