@@ -91,3 +91,18 @@ manage multi image and container command
   > docker image ls -q
   > docker image rm $(docker image ls -q)
 ```
+manage linux network name space and create peer pair
+```
+  > sudo ip netns list
+  > sudo ip netns add blue
+  > sudo ip netns delete blue
+  > sudo ip netns exec blue ip a
+  > sudo ip netns exec blue ip link set dev lo up (up loopback)
+  > sudo ip link add blue-veth-a type veth peer name blue-veth-b
+  > sudo ip link set blue-veth-b netns blue
+  > sudo ip netns exec blue ip link
+  > sudo ip addr add 192.168.1.1/24 dev blue-veth-a
+  > sudo ip netns exec blue ip addr add 192.168.1.2/24 dev blue-veth-b
+  > sudo ip netns exec blue ip link set dev blue-veth-b up
+  > sudo ip link set dev blue-veth-a up
+```
