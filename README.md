@@ -125,3 +125,11 @@ docker bridge network
   > ping 172.17.0.3 (ping test2 container ip)
   > sudo iptables --list -t nat
 ```
+Container Name Link
+```
+  > docker container stop test2
+  > docker container rm test2
+  > docker run -d --name test2 --link test1 busybox sh -c "while true; do sleep 2000; done"
+  > docker exec -it test2 sh
+  > ping test1 (ping container name)
+```
