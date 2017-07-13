@@ -171,3 +171,12 @@ Docker host network
   > docker network inspect host
   > curl 127.0.0.1
 ```
+Dockerize a python flask web app
+```
+  > docker run -d --name redis redis
+  > cd flask-redis
+  > docker build -t smalltides/python-redis:latest .
+  > docker run -d --name web --link redis -p 5000:5000 smalltides/python-redis
+  > curl 127.0.0.1:5000
+  > 
+```
