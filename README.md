@@ -133,3 +133,18 @@ Container Name Link
   > docker exec -it test2 sh
   > ping test1 (ping container name)
 ```
+create and use docker bridge
+```
+  > docker network list
+  > docker network inspect bridge
+  > brctl show
+  > docker network create -d bridge my-bridge
+  > docker network list
+  > docker network inspect my-bridge
+  > docker run -d --name test2 --network my-bridge busybox sh -c "while true; do sleep 2000; done"
+  > docker network connect my-bridge test1
+  > docker network inspect my-bridge
+  > docker container exec test1 ip a
+  > docker run -d --name test3 --network my-bridge busybox sh -c "while true; do sleep 2000; done"
+  > docker container exec test3 ping test1
+```
