@@ -106,3 +106,22 @@ manage linux network name space and create peer pair
   > sudo ip netns exec blue ip link set dev blue-veth-b up
   > sudo ip link set dev blue-veth-a up
 ```
+docker bridge network
+```
+  > docker network ls
+  > brctl show
+  > docker network inspect 37e137f568dc (network id)
+  > exit
+  > vagrant ssh default
+  > docker run -d --name test1 busybox sh -c "while true; do sleep 2000; done"
+  > ip link (now docker0 state up)
+  > docker container inspect test1
+  > docker exec -it test1 sh
+  > ip a
+  > exit
+  > ping 172.17.0.2 (ping test1 container ip)
+  > docker run -d --name test2 busybox sh -c "while true; do sleep 2000; done"
+  > docker container inspect test2
+  > ping 172.17.0.3 (ping test2 container ip)
+  > sudo iptables --list -t nat
+```
