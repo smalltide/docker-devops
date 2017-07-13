@@ -157,3 +157,17 @@ Container Port Mapping
   > docker container list -a
   > curl 127.0.0.1
 ```
+Docker host network
+```
+  > docker network ls
+  > ip a
+  > docker container stop web
+  > docker container rm web
+  > docker run -d --name web nginx
+  > curl 127.0.0.1 
+  > docker container stop web
+  > docker container rm web
+  > docker run -d --name web --network host nginx
+  > docker network inspect host
+  > curl 127.0.0.1
+```
