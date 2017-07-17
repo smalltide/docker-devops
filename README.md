@@ -231,3 +231,7 @@ Multi-Host Network with ectd
   > docker exec -it test2 ping 10.0.0.2 (in docker-node2)
 
 ```
+Multi-Host Networking Overlay with Flannel
+```
+  > (http://docker-k8s-lab.readthedocs.io/en/latest/docker/docker-flannel.html)
+```
