@@ -180,3 +180,13 @@ Dockerize a python flask web app
   > curl 127.0.0.1:5000
   > docker push smalltides/python-redis:latest
 ```
+create two docker host using vagarant
+```
+  > cd multi-node-vagrant
+  > vagrant up
+  > vagrant status (see docker-node1 and docker-node2)
+  > vagrant ssh docker-node1
+  > sudo gpasswd -a ${USER} docker (Adding user ubuntu to group docker)
+  > vagrant ssh docker-node2
+  > sudo gpasswd -a ${USER} docker (Adding user ubuntu to group docker)
+```
