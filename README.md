@@ -4,15 +4,15 @@ Learn Docker and Devops from Udemy course
 1. Docker技術入門與實戰
    https://www.udemy.com/docker-china
 
-2. docker devops course from development to production
-   https://www.udemy.com/the-docker-for-devops-course-from-development-to-production
-
 ![alt text](https://github.com/smalltide/docker-devops/blob/master/screenshot.gif "docker-devops")
 
 1. docker
 2. docker-machine
 3. virtualbox
 4. vagrant
+5. Docker Compose
+6. Docker Swarm
+
 
 install ubuntu 14.04 and docker
 ```
@@ -234,4 +234,22 @@ Multi-Host Network with ectd
 Multi-Host Networking Overlay with Flannel
 ```
   > (http://docker-k8s-lab.readthedocs.io/en/latest/docker/docker-flannel.html)
+```
+Use Docker Compose to deploy Python Flask Redis Application
+```
+  > vagrant init ubuntu/trusty64
+  > vagrant up
+  > vagrant status
+  > vagrant ssh default
+  > install docker in ubuntu 14.04 vm (https://docs.docker.com/engine/installation/linux/ubuntu/#install-from-a-package)
+  > curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m` > ./docker-compose (install docker-compose v1.13.0)
+  > chmod +x docker-compose (change permission to executable)
+  > sudo cp docker-compose /usr/local/bin/docker-compose
+  > cd docker-compose-flask-redis
+  > sudo docker-compose build
+  > sudo docker image list
+  > sudo docker-compose up
+  > sudo docker-compose up -d (backound run)
+  > 
+
 ```
