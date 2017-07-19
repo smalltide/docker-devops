@@ -250,6 +250,15 @@ Use Docker Compose to deploy Python Flask Redis Application
   > sudo docker image list
   > sudo docker-compose up
   > sudo docker-compose up -d (backound run)
-  > 
-
+  > sudo docker-compose stop
+```
+Use Docker Compose to Scaling and LoadBlancing
+```
+  > cd docker-compose-lb-scaling
+  > sudo docker-compose build
+  > sudo docker-compose up -d (backound run)
+  > sudo docker container ls
+  > curl 127.0.0.1
+  > docker-compose scale -h
+  > sudo docker-compose scale web=3
 ```
