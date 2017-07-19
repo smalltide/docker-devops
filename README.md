@@ -262,3 +262,12 @@ Use Docker Compose to Scaling and LoadBlancing
   > docker-compose scale -h
   > sudo docker-compose scale web=3
 ```
+Use Docker Compose to deploy a complex voting app
+```
+  > (https://github.com/udemy-course/example-voting-app)
+  > git clone git@github.com:udemy-course/example-voting-app.git
+  > cd example-voting-app
+  > sudo docker-compose build
+  > sudo docker-compose up -d (backound run)
+  > sudo docker container ls
+```
