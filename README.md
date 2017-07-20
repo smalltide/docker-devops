@@ -295,7 +295,7 @@ create three swarm docker host using docker-machine
   > docker-machine ssh swarm-manager
   > docker node ls
 ```
-Swarm Docker Node and Create Services
+Docker Swarm Node and Create Services
 ```
   > docker-machine ssh swarm-manager
   > docker service create --name web -d -p 80:80 nginx (run on swarm-manager)
@@ -304,4 +304,22 @@ Swarm Docker Node and Create Services
   > docker service ps web
   > docker service create --name web1 -d -p 81:80 nginx (run on swarm-worker1)
   > docker service ps web
+```
+Docker Swarm Load Balancing and Scaling
+```
+  > docker service create --name helloworld -d -p 80:8000/tcp jwilder/whoami
+  > curl 127.0.0.1
+  > docker service ls
+  > docker service ps helloworld
+  > docker service scale helloworld=3
+  > docker service ls
+  > docker service ps helloworld
+  > docker service scale helloworld=5
+  > docker service ps helloworld
+  > curl 127.0.0.1 (every time return different ID)
+  > docker service scale helloworld=3
+  > docker service ps helloworld
+  > docker service rm  helloworld
+  > docker service ls
+
 ```
