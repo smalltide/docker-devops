@@ -320,17 +320,22 @@ Docker Swarm Load Balancing and Scaling
   > docker service rm  helloworld
   > docker service ls
 ```
- Deploy App with docker-compose v3 in Docker Swarm
- ```
-   > cd docker-compose-flask-redis
-   > docker stack deploy -c docker-compose-v3.yml flask-redis
-   > docker service ls
-   > service ps flask-redis_redis
-   > service ps flask-redis_web
-   > curl 127.0.0.1
-   > docker stack ls
-   > docker stack ps flask-redis
-   > docker stack rm flask-redis
-   > docker stack ls
-   > docker service ls
- ```
+Deploy App with docker-compose v3 in Docker Swarm
+```
+  > cd docker-compose-flask-redis
+  > docker stack deploy -c docker-compose-v3.yml flask-redis
+  > docker service ls
+  > service ps flask-redis_redis
+  > service ps flask-redis_web
+  > curl 127.0.0.1
+  > docker stack ls
+  > docker stack ps flask-redis
+  > docker stack rm flask-redis
+  > docker stack ls
+  > docker service ls
+```
+Docker Python SDK
+```
+  > (https://github.com/docker/docker-py)
+  > pip install docker
+```
