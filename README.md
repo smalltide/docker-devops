@@ -1,10 +1,8 @@
 # docker-devops
 Learn Docker and Devops from Udemy course
 
-1. Docker技術入門與實戰
-   https://www.udemy.com/docker-china
-
-![alt text](https://github.com/smalltide/docker-devops/blob/master/screenshot.gif "docker-devops")
+Docker技術入門與實戰
+https://www.udemy.com/docker-china
 
 1. docker
 2. docker-machine
@@ -321,5 +319,18 @@ Docker Swarm Load Balancing and Scaling
   > docker service ps helloworld
   > docker service rm  helloworld
   > docker service ls
-
 ```
+ Deploy App with docker-compose v3 in Docker Swarm
+ ```
+   > cd docker-compose-flask-redis
+   > docker stack deploy -c docker-compose-v3.yml flask-redis
+   > docker service ls
+   > service ps flask-redis_redis
+   > service ps flask-redis_web
+   > curl 127.0.0.1
+   > docker stack ls
+   > docker stack ps flask-redis
+   > docker stack rm flask-redis
+   > docker stack ls
+   > docker service ls
+ ```
