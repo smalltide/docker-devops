@@ -295,3 +295,13 @@ create three swarm docker host using docker-machine
   > docker-machine ssh swarm-manager
   > docker node ls
 ```
+Swarm Docker Node and Create Services
+```
+  > docker-machine ssh swarm-manager
+  > docker service create --name web -d -p 80:80 nginx (run on swarm-manager)
+  > docker container ls
+  > docker service ls
+  > docker service ps web
+  > docker service create --name web1 -d -p 81:80 nginx (run on swarm-worker1)
+  > docker service ps web
+```
