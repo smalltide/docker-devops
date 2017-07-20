@@ -271,3 +271,10 @@ Use Docker Compose to deploy a complex voting app
   > sudo docker-compose up -d (backound run)
   > sudo docker container ls
 ```
+create three swarm docker host using vagarant
+```
+  > cd swarm-node-vagrant
+  > vagrant up
+  > vagrant status (see master, work1 and work2)
+  > 
+```
