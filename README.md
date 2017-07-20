@@ -271,10 +271,27 @@ Use Docker Compose to deploy a complex voting app
   > sudo docker-compose up -d (backound run)
   > sudo docker container ls
 ```
-create three swarm docker host using vagarant
+create three docker host using vagarant
 ```
   > cd swarm-node-vagrant
   > vagrant up
   > vagrant status (see master, work1 and work2)
   > 
+```
+create three swarm docker host using docker-machine
+```
+  > docker-machine create swarm-manager
+  > docker-machine create swarm-worker1
+  > docker-machine create swarm-worker2
+  > docker-machine ls
+  > docker-machine env swarm-manager
+  > docker-machine ssh swarm-manager
+  > docker swarm init --advertise-addr=192.168.99.100
+  > docker node ls
+  > docker-machine ssh swarm-worker1
+  > docker swarm join --token SWMTKN-1-0kg0b56j2xqitx3xh1uiv9sdvgvp97gr9736ubeaa28dq2qoet-21r255staeyu98v5xnxawxunr 192.168.99.100:2377
+  > docker-machine ssh swarm-worker2
+  > docker swarm join --token SWMTKN-1-0kg0b56j2xqitx3xh1uiv9sdvgvp97gr9736ubeaa28dq2qoet-21r255staeyu98v5xnxawxunr 192.168.99.100:2377
+  > docker-machine ssh swarm-manager
+  > docker node ls
 ```
